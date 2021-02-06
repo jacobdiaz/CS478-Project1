@@ -23,6 +23,7 @@
         android:layout_marginTop="5dp"
         android:text="Project1"
         android:textSize="38dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         />
     <TextView
@@ -44,6 +45,7 @@
         android:text="Welcome"
         android:textSize="38dp"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/black"
         android:layout_above="@id/btnOne"
         />
 
@@ -69,6 +71,16 @@
         android:layout_marginBottom="20dp"
         android:text="Button One"
         android:onClick="handleButtonOneClicked"
+        />
+
+    <TextView
+        android:id="@+id/isValidatedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="temp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#f0f0f0"
         />
 
 
