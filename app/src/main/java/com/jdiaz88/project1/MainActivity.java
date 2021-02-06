@@ -28,22 +28,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         isValidLegalName = false;
         centerText = findViewById(R.id.isValidatedText);
         welcomeText = findViewById(R.id.welcomeHeader);
-
         getSupportActionBar().hide(); // Hides the title bar
     }
 
-
+    // Handles getting user legal name
     public void handleButtonOneClicked(View view) {
-//        startActivity(new Intent(MainActivity.this, GetLegalNameActivity.class));
             Intent i = new Intent(MainActivity.this, GetLegalNameActivity.class);
             i.putExtra("legalName","");
             startActivityForResult(i, requestCode);
     }
 
+    // Handles edit contact
     public void handleButtonTwoClicked(View view) {
         if(isValidLegalName){
             Intent contactsIntent = new Intent(ContactsContract.Intents.Insert.ACTION);
@@ -57,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Get result from legal name validation activity and set variables
     protected void onActivityResult(int requestCode, int resultCode, Intent i) {
         super.onActivityResult(requestCode, resultCode, i);
-
         // Check if we sent that 99 request code
         if(requestCode == 99){
             // Check if we got an Ok result
@@ -75,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 centerText.setText("Invalid Name");
                 isValidLegalName = false;
             }
-
         }
     }
 }
